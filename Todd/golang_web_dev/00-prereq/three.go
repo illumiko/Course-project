@@ -20,17 +20,17 @@ func (p *person) introduction() (spoken string) {
 }
 
 func (a *agent) introduction() (spoken string) {
-	fmt.Printf("Hello Im agent %v\n", a.id)
+	fmt.Printf("Hello Im agent %v\n", a.person.name)
 	return
 }
 func able_to_introduce(r introduce) (x string) {
-	fmt.Printf("This is of type %T \n", r)
+	fmt.Printf("This is of type %v \n", r)
 	return
 }
 
 func main() {
 	p1 := person{"Smith", 20}
-	a1 := agent{p1, 2205}
+	a1 := agent{person{"Jack", 20}, 2205}
 	a1.introduction()
 	able_to_introduce(&p1)
 }
